@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+
+        <title>conect mysql</title>
+     
+        
+    </head>
+<body>
+    <%@page contentType="text/html" pageEncoding="UTF-8"%>
+    <%@page import="java.sql.*"%>
+    <%
+    try{
+        Class.forName("org.git.mm.mysql.Driver");
+        Connection mycon = DriverManager.getConnection("jdbc:mysql://localhost:3306/elec_company?user=root&password=root");
+    }
+    catch(ClassNotFoundException e){
+        out.println("Not found driver");
+    }
+    catch(SQLException e){
+        out.println("Not call");
+    }
+    %>
+</body>   
+
+</html>
